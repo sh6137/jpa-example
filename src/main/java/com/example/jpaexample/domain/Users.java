@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 @Entity
 public class Users {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     @NonNull
     private String name;
     @NonNull
     private String email;
     private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 
 }

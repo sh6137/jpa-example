@@ -4,15 +4,22 @@ import com.example.jpaexample.domain.Users;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
+import java.util.Optional;
 
 @SpringBootTest
 class UserRepositoryTest {
     @Autowired
     private UserRepository userRepository;
-    @Test
-    void crud(){
-        userRepository.save(new Users());
 
-        System.out.println(userRepository.findAll());
+    @Test
+    void crud() {
+        Page<Users> users = userRepository.findAll(PageRequest.of(1,3));
+
+        System.out.println("page : " + users);
+        System.out.println(users.getTotalElements());
+        System.out.println(users.getContent().get(0)) ;
     }
 }
