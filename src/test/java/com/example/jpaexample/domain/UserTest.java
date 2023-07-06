@@ -14,7 +14,7 @@ class UserTest {
         user.setUpdatedAt(LocalDateTime.now());
 
         Users user1 = new Users(null, "name", "aa@naver.com", LocalDateTime.now(), LocalDateTime.now());
-        Users user2 = new Users( "nave", "test@naver.com");
+        Users user2 = new Users("nave", "test@naver.com");
 
         System.out.println(user);
     }
